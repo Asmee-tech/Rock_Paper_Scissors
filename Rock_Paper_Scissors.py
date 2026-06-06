@@ -22,14 +22,14 @@ def tie():
 def pw():
     global ys, ls
     lab2.config(text="You win!")
-    us+=1
+    ys+=1
     us.config(text="Your score:"+str(ys))
     cs.config(text="Computer score:"+str(ls))
     
 def cw():
     global ys, ls
     lab2.config(text="Computer wins!")
-    cs+=1
+    ls+=1
     us.config(text="Your score:"+str(ys))
     cs.config(text="Computer score:"+str(ls))
 
@@ -40,7 +40,7 @@ def playerchoice(player_input):
      
     if comp_input==player_input:       
         tie()
-    elif comp_input=="rock" and player_input=="paper" or comp_input=="scissors" and player_input=="rock" or comp_input=="paper" and player_input=="scissors":
+    elif comp_input=="Rock" and player_input=="Paper" or comp_input=="Scissors" and player_input=="Rock" or comp_input=="Paper" and player_input=="Scissors":
         pw()
     else:
         cw()
@@ -57,13 +57,13 @@ frame1.pack()
 lab3=Label(frame1,text="Your Options:",fg="black",pady=8,font=font.Font(size=12))
 lab3.grid(row=0,column=0,pady=8)
     
-rock=Button(frame1,text="Rock",pady=5,font=font.Font(size=20),fg="black",width=5,bd=0,bg="pink", command=playerchoice("Rock"))
+rock=Button(frame1,text="Rock",pady=5,font=font.Font(size=20),fg="black",width=5,bd=0,bg="pink", command=lambda:playerchoice("Rock"))
 rock.grid(row=1,column=1,padx=8,pady=5)
 
-paper=Button(frame1,text="Paper",pady=5,font=font.Font(size=20),fg="black",width=5,bd=0,bg="purple",command=playerchoice("Paper"))
+paper=Button(frame1,text="Paper",pady=5,font=font.Font(size=20),fg="black",width=5,bd=0,bg="purple",command=lambda:playerchoice("Paper"))
 paper.grid(row=1,column=2,padx=8,pady=5)
 
-scissors=Button(frame1,text="Scissors",pady=5,font=font.Font(size=20),fg="black",width=6,bd=0,bg="blue",command=playerchoice("Scissors"))
+scissors=Button(frame1,text="Scissors",pady=5,font=font.Font(size=20),fg="black",width=6,bd=0,bg="blue",command=lambda:playerchoice("Scissors"))
 scissors.grid(row=1,column=3,padx=8,pady=5)
 
 score=Label(frame1,text="Score:",font=font.Font(size=12))
